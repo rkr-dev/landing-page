@@ -7,13 +7,19 @@ export default function TeamCard({ src, altText, title, designation, social }) {
     <Box sx={styles.card}>
       <Image src={src} alt={altText} sx={styles.memberThumb} />
       <Box sx={styles.infoWrapper}>
-        <Heading sx={styles.infoWrapper.name} className="info_name">{title}</Heading>
-        <Text className="info_designation" sx={styles.infoWrapper.designation}>{ designation}</Text>
+        <Heading sx={styles.infoWrapper.name} className="info_name">
+          {title}
+        </Heading>
+        <Text className="info_designation" sx={styles.infoWrapper.designation}>
+          {designation}
+        </Text>
       </Box>
       <Box sx={styles.socialShare} className="social__share">
-        {social.map(item => (
-          <Link key={item.id} href={item.path} className={item.name}>{ item.icon}</Link>
-      ))}
+        {social.map((item) => (
+          <Link key={item.id} href={item.path} className={item.name}>
+            {item.icon}
+          </Link>
+        ))}
       </Box>
     </Box>
   );
